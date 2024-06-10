@@ -1,9 +1,12 @@
 const express = require('express');
-const app = express.app;
+const app = express();
+const router = require('./routing')
 
-app.listen(PORT, (err, res) => {
+app.listen(3000, (err, res) => {
     if (err != null) {
         console.log(err);
     }
     console.log("Done!");
 })
+
+app.use(router);
